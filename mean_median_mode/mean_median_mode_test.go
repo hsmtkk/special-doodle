@@ -1,4 +1,4 @@
-package main_test
+package mean_median_mode_test
 
 import (
 	"bytes"
