@@ -1,2 +1,3 @@
 // mod operators;
-mod weighted_mean;
+// mod weighted_mean;
+mod std_dev;
