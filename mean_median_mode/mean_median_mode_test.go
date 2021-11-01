@@ -1,17 +1,16 @@
-package mean_median_mode_test
+package main
 
 import (
 	"bytes"
 	"testing"
 
-	"github.com/hsmtkk/special-doodle/mean_median_mode"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestSplitString(t *testing.T) {
 	s := "1 2 3"
 	want := []int{1, 2, 3}
-	got, err := mean_median_mode.SplitString(s)
+	got, err := SplitString(s)
 	assert.Nil(t, err)
 	assert.Equal(t, want, got)
 }
@@ -26,7 +25,7 @@ func TestSolve(t *testing.T) {
 `
 	reader := bytes.NewBufferString(input)
 	var writer bytes.Buffer
-	err := mean_median_mode.Solve(reader, &writer)
+	err := Solve(reader, &writer)
 	got := writer.String()
 	assert.Nil(t, err)
 	assert.Equal(t, want, got)
@@ -35,21 +34,21 @@ func TestSolve(t *testing.T) {
 func TestMean(t *testing.T) {
 	ns := []int{64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060}
 	want := 43900.6
-	got := mean_median_mode.Mean(ns)
+	got := Mean(ns)
 	assert.Equal(t, want, got)
 }
 
 func TestMedian(t *testing.T) {
 	ns := []int{64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060}
 	want := 44627.5
-	got := mean_median_mode.Median(ns)
+	got := Median(ns)
 	assert.Equal(t, want, got)
 }
 
 func TestMode(t *testing.T) {
 	ns := []int{64630, 11735, 14216, 99233, 14470, 4978, 73429, 38120, 51135, 67060}
 	want := 4978
-	got := mean_median_mode.Mode(ns)
+	got := Mode(ns)
 	assert.Equal(t, want, got)
 }
 
@@ -63,7 +62,7 @@ func TestSolve2(t *testing.T) {
 `
 	reader := bytes.NewBufferString(input)
 	var writer bytes.Buffer
-	err := mean_median_mode.Solve(reader, &writer)
+	err := Solve(reader, &writer)
 	got := writer.String()
 	assert.Nil(t, err)
 	assert.Equal(t, want, got)

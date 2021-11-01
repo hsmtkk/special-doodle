@@ -1,4 +1,4 @@
-package mean_median_mode
+package main
 
 import (
 	"bufio"
