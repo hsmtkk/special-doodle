@@ -5,4 +5,4 @@
 // mod plus_minus;
 // mod min_max_sum;
 // mod find_median;
-mod lonely_int;
+// mod lonely_int;
