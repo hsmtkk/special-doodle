@@ -1,5 +1,5 @@
 #[derive(Debug, PartialEq)]
-struct Ratio  {
+struct Ratio {
     positive_ratio: f32,
     negative_ratio: f32,
     zero_ratio: f32,
@@ -8,7 +8,11 @@ struct Ratio  {
 impl Ratio {
     #[allow(dead_code)]
     fn new(positive_ratio: f32, negative_ratio: f32, zero_ratio: f32) -> Ratio {
-        Ratio{positive_ratio, negative_ratio, zero_ratio}
+        Ratio {
+            positive_ratio,
+            negative_ratio,
+            zero_ratio,
+        }
     }
 }
 
@@ -29,16 +33,20 @@ fn get_ratio(arr: &Vec<i32>) -> Ratio {
     let arr_len: f32 = arr.len() as f32;
     let positive_ratio = pos_count as f32 / arr_len;
     let negative_ratio = neg_count as f32 / arr_len;
-    let zero_ratio = zero_count as f32  / arr_len;
-    Ratio{positive_ratio, negative_ratio, zero_ratio}
+    let zero_ratio = zero_count as f32 / arr_len;
+    Ratio {
+        positive_ratio,
+        negative_ratio,
+        zero_ratio,
+    }
 }
 
 #[cfg(test)]
 mod tests {
     #[test]
-    fn test1(){
-        let arr = vec![-4,3,-9,0,4,1];
-        let want = super::Ratio::new(1.0/2.0, 1.0/3.0, 1.0/6.0);
+    fn test1() {
+        let arr = vec![-4, 3, -9, 0, 4, 1];
+        let want = super::Ratio::new(1.0 / 2.0, 1.0 / 3.0, 1.0 / 6.0);
         let got = super::get_ratio(&arr);
         assert_eq!(want, got);
     }
