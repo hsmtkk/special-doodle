@@ -8,4 +8,6 @@
 // mod lonely_int;
 // mod add_two_nums;
 // mod lets_review;
-mod dict_map;
+// mod dict_map;
+// mod sample;
+mod array_reverse;
